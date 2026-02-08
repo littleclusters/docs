@@ -150,8 +150,6 @@ Advances to the next stage after verifying the current stage passes. Updates `lc
 
 If the current stage hasn't been completed, `lc next` runs tests first and only advances if they pass.
 
-If you're on GitHub, consider adding `lc` and `lc-<language>` (e.g., `lc-go`, `lc-rust`) as topics to your repository to share your implementation.
-
 ## Commands Reference
 
 Run `lc --help` to see all available commands, or `lc <command> --help` for command-specific options.

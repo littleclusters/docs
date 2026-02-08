@@ -50,6 +50,4 @@ Pass the current stage, then run `lc next` to unlock the next stage. Each stage 
 
 By the end of the challenge, you'll have a deep understanding of how these systems actually work because you built one yourself.
 
-If you're on GitHub, consider adding `lc` and `lc-<language>` (e.g., `lc-go`, `lc-rust`) as topics to your repository to share your implementation.
-
 Good luck! 🚀
