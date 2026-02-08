@@ -15,7 +15,7 @@ $ lc init kv-store
 Created challenge in current directory.
   run.sh       - Builds and runs your implementation
   README.md    - Challenge overview and requirements
-  lc.yaml      - Tracks your progress
+  lc.state     - Tracks your progress
   .gitignore   - Ignores .lc/ working directory (server files and logs)
 
 Implement http-api stage, then run 'lc test'.

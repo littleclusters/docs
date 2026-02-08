@@ -12,7 +12,7 @@ Run `lc` tests automatically in GitHub Actions.
 Add `.github/workflows/littleclusters.yaml` to your repository:
 
 ```yaml
-name: LittleClusters Tests
+name: Test
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: littleclusters/action@main
+      - uses: littleclusters/test@main
 ```
 
 The action runs `lc test` on every push to main and on pull requests.
@@ -35,7 +35,7 @@ The action runs `lc test` on every push to main and on pull requests.
 If your `littleclusters.yaml` isn't at the repository root:
 
 ```yaml
-- uses: littleclusters/action@main
+- uses: littleclusters/test@main
   with:
     working-directory: './my-challenge'
 ```
