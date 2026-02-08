@@ -1,13 +1,13 @@
 ---
-title: How lsfr Works
+title: How It Works
 weight: 1
 ---
 
-# How _lsfr_ Works
+# How It Works
 
 Reading about how systems work is one thing. Building them is another.
 
-_lsfr_ breaks down complex distributed systems into manageable stages you can actually implement. Build distributed systems from scratch: databases, caches, message queues, lock services, and more. Each challenge teaches different distributed systems patterns like consensus, replication, partitioning, and fault tolerance. Each challenge starts simple and adds complexity one stage at a time.
+LittleClusters breaks down complex distributed systems into manageable stages you can actually implement. Build distributed systems from scratch: databases, caches, message queues, lock services, and more. Each challenge teaches different distributed systems patterns like consensus, replication, partitioning, and fault tolerance. Each challenge starts simple and adds complexity one stage at a time.
 
 You write real code that actually works. Tests verify your implementation handles the hard problems: network failures, crash recovery, concurrent access, etc. By the end, you understand these systems because you've built them yourself.
 
@@ -19,11 +19,11 @@ Each stage comes with tests that simulate real-world scenarios like network fail
 
 Each stage explains what you need to implement and links out to good resources for learning more. Why reinvent the wheel when Kleppmann and others have already explained it better? 😅
 
-Ready to try it out? Here's how to set up _lsfr_ and start your first challenge.
+Ready to try it out? Here's how to set up the CLI and start your first challenge.
 
 ## Installation
 
-See [this guide](/guides/cli/#installation) on how to install _lsfr_ on your system.
+See [this guide](/guides/cli/#installation) on how to install the CLI on your system.
 
 ## Pick a Challenge
 
@@ -31,25 +31,25 @@ Start with the [distributed key-value store challenge](/kv-store/); it's a great
 
 ### Scaffolding
 
-Run `lsfr init kv-store` to create a new challenge directory with:
+Run `lc init kv-store` to create a new challenge directory with:
 
 - `run.sh` - Builds and runs your implementation
 - `README.md` - Challenge overview and requirements
-- `lsfr.yaml` - Tracks your progress
-- `.gitignore` - Ignores `.lsfr/` working directory (server files and logs)
+- `lc.yaml`   - Tracks your progress
+- `.gitignore` - Ignores `.lc/` working directory (server files and logs)
 
-Update `run.sh` with the commands to build and run your implementation. You can use _any_ language - Go, Python, Rust, even Ponylang - as long as `run.sh` can start your program and pass through any command-line arguments from `lsfr test`.
+Update `run.sh` with the commands to build and run your implementation. You can use _any_ language - Go, Python, Rust, even Ponylang - as long as `run.sh` can start your program and pass through any command-line arguments from `lc test`.
 
 ## Implement & Test
 
-Write your implementation in any language to solve the challenge's first stage. When ready, run `lsfr test` to verify your solution works correctly. The tests focus on behavior, not implementation details.
+Write your implementation in any language to solve the challenge's first stage. When ready, run `lc test` to verify your solution works correctly. The tests focus on behavior, not implementation details.
 
 ## Advance Through Stages
 
-Pass the current stage, then run `lsfr next` to unlock the next stage. Each stage builds on the previous one, gradually adding complexity.
+Pass the current stage, then run `lc next` to unlock the next stage. Each stage builds on the previous one, gradually adding complexity.
 
 By the end of the challenge, you'll have a deep understanding of how these systems actually work because you built one yourself.
 
-If you're on GitHub, consider adding `lsfr` and `lsfr-<language>` (e.g., `lsfr-go`, `lsfr-rust`) as topics to your repository to share your implementation.
+If you're on GitHub, consider adding `lc` and `lc-<language>` (e.g., `lc-go`, `lc-rust`) as topics to your repository to share your implementation.
 
 Good luck! 🚀

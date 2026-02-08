@@ -14,7 +14,7 @@ Implement [Raft](https://raft.github.io/raft.pdf) leader election to form a stat
 Start nodes with the `--peers` flag specifying all cluster members:
 
 ```console
-$ ./run.sh --port 8001 --working-dir .lsfr/run-T --peers=:8001,:8002,:8003,:8004,:8005
+$ ./run.sh --port 8001 --working-dir .lc/run-T --peers=:8001,:8002,:8003,:8004,:8005
 ```
 
 The `--peers` list includes all cluster members, including this node itself, and as such, all nodes receive the same `--peers` list.
@@ -112,7 +112,7 @@ In this stage with no log entries yet, set `prev-log-index` and `prev-log-term` 
 
 ### Testing APIs
 
-The endpoints are _lsfr_-specific for testing and observability.
+The endpoints are testing and observability-specific.
 
 3. GET /cluster/info
 
@@ -174,13 +174,13 @@ Heal state persists across crashes and restarts.
 Your server will be started as a 5-node cluster:
 
 ```console
-$ ./run.sh --port 8001 --working-dir .lsfr/run-T --peers=:8001,:8002,:8003,:8004,:8005
+$ ./run.sh --port 8001 --working-dir .lc/run-T --peers=:8001,:8002,:8003,:8004,:8005
 ```
 
 The tests will verify leader election behavior:
 
 ```console
-$ lsfr test leader-election
+$ lc test leader-election
 Testing leader-election: Cluster Elects and Maintains Leader
 
 ✓ Leader Election Completes
@@ -194,13 +194,13 @@ Testing leader-election: Cluster Elects and Maintains Leader
 
 PASSED ✓
 
-Run 'lsfr next' to advance to the next stage.
+Run 'lc next' to advance to the next stage.
 ```
 
 Example failure:
 
 ```console
-$ lsfr test
+$ lc test
 Testing leader-election: Cluster Elects and Maintains Leader
 
 ✓ Leader Election Completes
@@ -218,7 +218,7 @@ GET http://127.0.0.1:8000/cluster/info
 
 FAILED ✗
 
-Read the guide: lsfr.io/kv-store/leader-election
+Read the guide: littleclusters.com/kv-store/leader-election
 ```
 
 ## Resources

@@ -4,21 +4,21 @@ title: Home
 
 # Learn by Building Real Systems
 
-You know that feeling when you read about Raft consensus or consistent hashing and think _"okay, but how would I actually implement this?"_ That gap between understanding concepts and building working systems is what _lsfr_ is for.
+You know that feeling when you read about Raft consensus or consistent hashing and think _"okay, but how would I actually implement this?"_ That gap between understanding concepts and building working systems is what LittleClusters is for.
 
 ## Project-Based Learning
 
 Learn by building complete, real-world systems rather than doing isolated exercises. You'll build distributed systems from scratch: key-value stores, message queues, caches, blockchains, and more. Learn consensus algorithms, replication strategies, and fault tolerance by implementing real-world patterns.
 
 ```console
-$ lsfr init kv-store
+$ lc init kv-store
 Created challenge in current directory.
   run.sh       - Builds and runs your implementation
   README.md    - Challenge overview and requirements
-  lsfr.yaml    - Tracks your progress
-  .gitignore   - Ignores .lsfr/ working directory (server files and logs)
+  lc.yaml      - Tracks your progress
+  .gitignore   - Ignores .lc/ working directory (server files and logs)
 
-Implement http-api stage, then run 'lsfr test'.
+Implement http-api stage, then run 'lc test'.
 ```
 
 ## Build Incrementally
@@ -28,7 +28,7 @@ Each stage introduces one new concept only after you've solidified the previous 
 The tests verify your system works by running it and checking behavior, not implementation details, so you can focus on learning the concepts without wrestling with complex setup.
 
 ```console
-$ lsfr test
+$ lc test
 Testing http-api: Store and Retrieve Data
 
 ✓ PUT Basic Operations
@@ -44,35 +44,35 @@ Testing http-api: Store and Retrieve Data
 
 PASSED ✓
 
-Run 'lsfr next' to advance to the next stage.
+Run 'lc next' to advance to the next stage.
 ```
 
 When you're ready, advance to the next stage:
 
 ```console
-$ lsfr next
+$ lc next
 Advanced to persistence: Data Persistence
 
 Your system must survive restarts and handle concurrent writes.
 
-Read the guide: lsfr.io/kv-store/persistence
+Read the guide: littleclusters.com/kv-store/persistence
 
-Run 'lsfr test' when ready.
+Run 'lc test' when ready.
 ```
 
 ## Open-Source by Default
 
-All tests, tooling, reference implementations, and this website are open source. Check out [_lsfr's_ source code](https://github.com/st3v3nmw/lsfr) and this [website's source code](https://github.com/st3v3nmw/lsfr.io).
+All tests, tooling, reference implementations, and this website are open source. Check out [the CLI's source code](https://github.com/littleclusters/lc) and this [website's source code](https://github.com/littleclusters/docs).
 
 ```console
-$ lsfr list
+$ lc list
 Available challenges:
 
   kv-store             - Distributed Key-Value Store (8 stages)
 
-Start with: lsfr init <challenge-name>
+Start with: lc init <challenge-name>
 ```
 
 ## Ready to Build?
 
-[Start with the distributed key-value store challenge](/kv-store/). Or [learn how lsfr works](/how-lsfr-works/) if you want to understand the tooling first.
+[Start with the distributed key-value store challenge](/kv-store/). Or [learn how it works](/how-it-works/) if you want to understand the tooling first.
