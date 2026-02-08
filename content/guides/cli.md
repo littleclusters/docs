@@ -80,7 +80,7 @@ $ lc init <challenge> [path]
 Creates a new challenge directory with:
 - `run.sh` - Script that builds and runs your implementation
 - `README.md` - Challenge overview and requirements
-- `lc.yaml`   - Tracks your progress
+- `lc.state` - Tracks your progress
 - `.gitignore` - Ignores `.lc/` working directory (server files and logs)
 
 **Examples:**
@@ -146,7 +146,7 @@ Fix the issues, then run `lc test` again. The CLI is designed for quick iteratio
 $ lc next
 ```
 
-Advances to the next stage after verifying the current stage passes. Updates `lc.yaml` automatically.
+Advances to the next stage after verifying the current stage passes. Updates `lc.state` automatically.
 
 If the current stage hasn't been completed, `lc next` runs tests first and only advances if they pass.
 
@@ -164,18 +164,27 @@ Creates a new challenge in the specified directory (or current directory if not 
 
 **Usage:** `lc test [stage]`
 
-Runs tests for the current stage (from `lc.yaml`) or a specific stage if provided.
+Runs tests for the current stage (from `lc.state`) or a specific stage if provided.
 
 ```console
 $ lc test                # Test current stage
 $ lc test persistence    # Test specific stage
 ```
 
+**Flags:**
+- `--so-far` - Test all stages up to and including the specified stage
+
+```console
+$ lc test persistence --so-far    # Test all stages from http-api through persistence
+```
+
+This is useful for regression testing to ensure earlier stages still pass as you progress through the challenge.
+
 ### lc next
 
 **Usage:** `lc next`
 
-Advances to the next stage after verifying current stage passes all tests.
+Advances to the next stage after verifying current stage passes all tests. Updates `lc.state` automatically.
 
 ### lc status
 
@@ -210,16 +219,12 @@ Implement leader-election, then run 'lc test'.
 
 Lists all available challenges with stage counts.
 
-## Understanding lc.yaml
+## Understanding lc.state
 
-The config file tracks your progress:
+The state file tracks your progress with a simple format:
 
-```yaml
-challenge: kv-store
-stages:
-  current: persistence
-  completed:
-    - http-api
+```
+kv-store:persistence
 ```
 
-You can edit this manually to jump between stages or reset progress. You can also use `lc test <stage>` to test any stage without changing your current progress.
+Format: `<challenge>:<stage>`

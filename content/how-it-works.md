@@ -35,7 +35,7 @@ Run `lc init kv-store` to create a new challenge directory with:
 
 - `run.sh` - Builds and runs your implementation
 - `README.md` - Challenge overview and requirements
-- `lc.yaml`   - Tracks your progress
+- `lc.state` - Tracks your progress
 - `.gitignore` - Ignores `.lc/` working directory (server files and logs)
 
 Update `run.sh` with the commands to build and run your implementation. You can use _any_ language - Go, Python, Rust, even Ponylang - as long as `run.sh` can start your program and pass through any command-line arguments from `lc test`.
