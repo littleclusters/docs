@@ -10,7 +10,7 @@ Welcome to the distributed key-value store challenge!
 
 You'll build a distributed key-value store from scratch using Raft consensus, the same algorithm that powers [etcd](https://etcd.io/) and [Consul](https://developer.hashicorp.com/consul). Start with a single-node system that handles persistence and crash recovery, then implement leader election, log replication, and fault tolerance.
 
-This is the first project in _lsfr_'s distributed systems series. It teaches consensus-based replication; later projects will teach different patterns like leaderless replication, CRDTs, and Byzantine fault tolerance.
+This is the first project in LittleClusters' distributed systems series. It teaches consensus-based replication; later projects will teach different patterns like leaderless replication, CRDTs, and Byzantine fault tolerance.
 
 ## Stages
 
@@ -48,7 +48,7 @@ Prevent unbounded log growth through snapshots and log truncation.
 
 ## Getting Started
 
-If you haven't already, read [this overview](/how-lsfr-works/) on how _lsfr_ works and then start with [stage 1 (HTTP API)](/kv-store/http-api/).
+If you haven't already, read [this overview](/how-it-works/) on how it works and then start with [stage 1 (HTTP API)](/kv-store/http-api/).
 
 ## Resources
 

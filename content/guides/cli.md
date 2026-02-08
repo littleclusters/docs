@@ -10,90 +10,90 @@ weight: 1
 ### `go install`
 
 ```console
-$ go install github.com/st3v3nmw/lsfr/cmd/lsfr@latest
+$ go install github.com/littleclusters/lc/cmd/lc@latest
 ```
 
-This installs `lsfr` to your `$GOPATH/bin` directory. Make sure it's in your `$PATH`.
+This installs `lc` to your `$GOPATH/bin` directory. Make sure it's in your `$PATH`.
 
-You can also install a specific version using tags (see [available versions](https://github.com/st3v3nmw/lsfr/tags)):
+You can also install a specific version using tags (see [available versions](https://github.com/littleclusters/lc/tags)):
 
 ```console
-$ go install github.com/st3v3nmw/lsfr/cmd/lsfr@v0.1.0
+$ go install github.com/littleclusters/lc/cmd/lc@v0.1.0
 ```
 
 #### Update
 
 ```console
-$ go install github.com/st3v3nmw/lsfr/cmd/lsfr@latest
+$ go install github.com/littleclusters/lc/cmd/lc@latest
 ```
 
 ### Homebrew
 
 ```console
-$ brew tap st3v3nmw/tap
-$ brew install st3v3nmw/tap/lsfr
+$ brew tap littleclusters/tap
+$ brew install littleclusters/tap/lc
 ```
 
 #### Update
 
 ```console
-$ brew upgrade st3v3nmw/tap/lsfr
+$ brew upgrade littleclusters/tap/lc
 ```
 
 ### Verify Installation
 
 ```console
-$ lsfr list
+$ lc list
 Available challenges:
 
   kv-store             - Distributed Key-Value Store (8 stages)
 
-Start with: lsfr init <challenge-name>
+Start with: lc init <challenge-name>
 ```
 
 ## Quick Start
 
 ```console
-$ lsfr init kv-store    # Create challenge in current directory
-$ lsfr test             # Test your implementation
-$ lsfr next             # Advance to the next stage
+$ lc init kv-store    # Create challenge in current directory
+$ lc test             # Test your implementation
+$ lc next             # Advance to the next stage
 ```
 
-Edit `run.sh` to launch your implementation, then run `lsfr test` to get feedback.
+Edit `run.sh` to launch your implementation, then run `lc test` to get feedback.
 
 > [!NOTE]
 > Commands support short aliases for faster typing:
-> - `lsfr i` → `lsfr init`
-> - `lsfr t` → `lsfr test`
-> - `lsfr n` → `lsfr next`
-> - `lsfr s` → `lsfr status`
-> - `lsfr l` or `lsfr ls` → `lsfr list`
+> - `lc i` → `lc init`
+> - `lc t` → `lc test`
+> - `lc n` → `lc next`
+> - `lc s` → `lc status`
+> - `lc l` or `lc ls` → `lc list`
 
 ## Basic Workflow
 
 ### 1. Start a Challenge
 
 ```console
-$ lsfr init <challenge> [path]
+$ lc init <challenge> [path]
 ```
 
 Creates a new challenge directory with:
 - `run.sh` - Script that builds and runs your implementation
 - `README.md` - Challenge overview and requirements
-- `lsfr.yaml` - Tracks your progress
-- `.gitignore` - Ignores `.lsfr/` working directory (server files and logs)
+- `lc.yaml`   - Tracks your progress
+- `.gitignore` - Ignores `.lc/` working directory (server files and logs)
 
 **Examples:**
 
 ```console
-$ lsfr init kv-store           # Create in current directory
-$ lsfr init kv-store my-kvs    # Create in ./my-kvs
+$ lc init kv-store           # Create in current directory
+$ lc init kv-store my-kvs    # Create in ./my-kvs
 ```
 
 ### 2. Implement & Test
 
 Edit `run.sh` to start your implementation.
-The script must launch your server and pass through any arguments from `lsfr`:
+The script must launch your server and pass through any arguments from `lc`:
 
 ```bash
 #!/bin/bash -e
@@ -114,14 +114,14 @@ exec go run ./cmd/server "$@"
 Then test:
 
 ```console
-$ lsfr test
+$ lc test
 ```
 
 **When tests pass:**
 ```
 PASSED ✓
 
-Run 'lsfr next' to advance to the next stage.
+Run 'lc next' to advance to the next stage.
 ```
 
 **When tests fail:**
@@ -135,58 +135,58 @@ PUT http://127.0.0.1:45123/kv/ "foo"
   Your server accepted an empty key when it should reject it.
   Add validation to return 400 Bad Request for empty keys.
 
-Read the guide: lsfr.io/kv-store/http-api
+Read the guide: littleclusters.com/kv-store/http-api
 ```
 
-Fix the issues, then run `lsfr test` again. The CLI is designed for quick iteration, just keep running `lsfr test` as you make changes.
+Fix the issues, then run `lc test` again. The CLI is designed for quick iteration, just keep running `lc test` as you make changes.
 
 ### 3. Progress Through Stages
 
 ```console
-$ lsfr next
+$ lc next
 ```
 
-Advances to the next stage after verifying the current stage passes. Updates `lsfr.yaml` automatically.
+Advances to the next stage after verifying the current stage passes. Updates `lc.yaml` automatically.
 
-If the current stage hasn't been completed, `lsfr next` runs tests first and only advances if they pass.
+If the current stage hasn't been completed, `lc next` runs tests first and only advances if they pass.
 
-If you're on GitHub, consider adding `lsfr` and `lsfr-<language>` (e.g., `lsfr-go`, `lsfr-rust`) as topics to your repository to share your implementation.
+If you're on GitHub, consider adding `lc` and `lc-<language>` (e.g., `lc-go`, `lc-rust`) as topics to your repository to share your implementation.
 
 ## Commands Reference
 
-Run `lsfr --help` to see all available commands, or `lsfr <command> --help` for command-specific options.
+Run `lc --help` to see all available commands, or `lc <command> --help` for command-specific options.
 
-### lsfr init
+### lc init
 
-**Usage:** `lsfr init <challenge> [path]`
+**Usage:** `lc init <challenge> [path]`
 
 Creates a new challenge in the specified directory (or current directory if not specified).
 
-### lsfr test
+### lc test
 
-**Usage:** `lsfr test [stage]`
+**Usage:** `lc test [stage]`
 
-Runs tests for the current stage (from `lsfr.yaml`) or a specific stage if provided.
+Runs tests for the current stage (from `lc.yaml`) or a specific stage if provided.
 
 ```console
-$ lsfr test                # Test current stage
-$ lsfr test persistence    # Test specific stage
+$ lc test                # Test current stage
+$ lc test persistence    # Test specific stage
 ```
 
-### lsfr next
+### lc next
 
-**Usage:** `lsfr next`
+**Usage:** `lc next`
 
 Advances to the next stage after verifying current stage passes all tests.
 
-### lsfr status
+### lc status
 
-**Usage:** `lsfr status`
+**Usage:** `lc status`
 
 Shows challenge progress and next steps:
 
 ```console
-$ lsfr status
+$ lc status
 Distributed Key-Value Store
 
 Build a distributed key-value store from scratch using the Raft consensus algorithm.
@@ -201,18 +201,18 @@ Progress:
   fault-tolerance    - Cluster Survives Failures and Partitions
   log-compaction     - System Manages Log Growth
 
-Read the guide: lsfr.io/kv-store/leader-election
+Read the guide: littleclusters.com/kv-store/leader-election
 
-Implement leader-election, then run 'lsfr test'.
+Implement leader-election, then run 'lc test'.
 ```
 
-### lsfr list
+### lc list
 
-**Usage:** `lsfr list`
+**Usage:** `lc list`
 
 Lists all available challenges with stage counts.
 
-## Understanding lsfr.yaml
+## Understanding lc.yaml
 
 The config file tracks your progress:
 
@@ -224,4 +224,4 @@ stages:
     - http-api
 ```
 
-You can edit this manually to jump between stages or reset progress. You can also use `lsfr test <stage>` to test any stage without changing your current progress.
+You can edit this manually to jump between stages or reset progress. You can also use `lc test <stage>` to test any stage without changing your current progress.

@@ -1,10 +1,10 @@
-baseURL = "https://lsfr.io/"
+baseURL = "https://littleclusters.com/"
 languageCode = "en-us"
-title = "lsfr.io"
+title = "LittleClusters"
 theme = "hugo-book"
 enableGitInfo = true
 enableRobotsTXT = true
-copyright = '[© CC BY 4.0](https://github.com/st3v3nmw/lsfr.io/blob/main/LICENSE)'
+copyright = '[© CC BY 4.0](https://github.com/littleclusters/docs/blob/main/LICENSE)'
 
 disableKinds = ["taxonomy", "term", "rss"]
 
@@ -23,7 +23,7 @@ disableKinds = ["taxonomy", "term", "rss"]
 [menu]
 [[menu.after]]
   name = "GitHub"
-  url = "https://github.com/st3v3nmw/lsfr"
+  url = "https://github.com/littleclusters/lc"
   weight = 2000
 
 [markup]

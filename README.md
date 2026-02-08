@@ -1,8 +1,8 @@
-# lsfr.io
+# LittleClusters
 
 _Build distributed systems from scratch._
 
-This repository contains the documentation, challenge definitions, and guides that power [lsfr.io](https://lsfr.io).
+This repository contains the documentation, challenge definitions, and guides that power [littleclusters.com](https://littleclusters.com).
 
 ## Structure
 
@@ -29,6 +29,9 @@ For major changes or new challenges, please open an issue first to discuss.
 This site is built with [Hugo](https://gohugo.io/). To run locally:
 
 ```console
+$ git clone https://github.com/littleclusters/docs.git
+$ cd docs
+$ git submodule update --init
 $ hugo server -D
 ```
 

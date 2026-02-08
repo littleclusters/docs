@@ -41,13 +41,13 @@ This approach survives clean shutdowns but not crashes. If the process dies unex
 Your server will be started with the working directory where it should store data:
 
 ```console
-$ ./run.sh --port 8001 --working-dir .lsfr/run-20251226-210357
+$ ./run.sh --port 8001 --working-dir .lc/run-20251226-210357
 ```
 
-You can test your implementation using the `lsfr` command:
+You can test your implementation using the `lc` command:
 
 ```console
-$ lsfr test
+$ lc test
 Testing persistence: Data Survives SIGTERM
 
 ✓ Verify Data Survives Graceful Restart
@@ -56,7 +56,7 @@ Testing persistence: Data Survives SIGTERM
 
 PASSED ✓
 
-Run 'lsfr next' to advance to the next stage.
+Run 'lc next' to advance to the next stage.
 ```
 
 The tests will:

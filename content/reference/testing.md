@@ -5,7 +5,7 @@ weight: 1
 
 # Testing Framework
 
-The lsfr testing framework (`attest`) provides a fluent API for writing black-box tests against programs. Tests validate external behavior without accessing implementation internals.
+The testing framework (`attest`) provides a fluent API for writing black-box tests against programs. Tests validate external behavior without accessing implementation internals.
 
 ## Quick Start
 
@@ -15,7 +15,7 @@ A typical test suite:
 package kvstore
 
 import (
-    . "github.com/st3v3nmw/lsfr/internal/attest"
+    . "github.com/littleclusters/lc/internal/attest"
 )
 
 func HTTPAPI() *Suite {
@@ -389,7 +389,7 @@ Each stage is a function returning `*Suite`:
 package kvstore
 
 import (
-    . "github.com/st3v3nmw/lsfr/internal/attest"
+    . "github.com/littleclusters/lc/internal/attest"
 )
 
 func HTTPAPI() *Suite {
@@ -425,7 +425,7 @@ Create `init.go`:
 ```go
 package kvstore
 
-import "github.com/st3v3nmw/lsfr/internal/registry"
+import "github.com/littleclusters/lc/internal/registry"
 
 func init() {
     challenge := &registry.Challenge{
@@ -452,6 +452,6 @@ Import your challenge in `challenges/challenges.go`:
 package challenges
 
 import (
-    _ "github.com/st3v3nmw/lsfr/challenges/kvstore"
+    _ "github.com/littleclusters/lc/challenges/kvstore"
 )
 ```

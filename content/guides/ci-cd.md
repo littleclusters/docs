@@ -5,14 +5,14 @@ weight: 2
 
 # CI/CD
 
-Run `lsfr` tests automatically in GitHub Actions.
+Run `lc` tests automatically in GitHub Actions.
 
 ## GitHub Actions
 
-Add `.github/workflows/lsfr.yaml` to your repository:
+Add `.github/workflows/littleclusters.yaml` to your repository:
 
 ```yaml
-name: lsfr Tests
+name: LittleClusters Tests
 
 on:
   push:
@@ -25,17 +25,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: st3v3nmw/lsfr-action@main
+      - uses: littleclusters/action@main
 ```
 
-The action runs `lsfr test` on every push to main and on pull requests.
+The action runs `lc test` on every push to main and on pull requests.
 
 ### Custom Working Directory
 
-If your `lsfr.yaml` isn't at the repository root:
+If your `littleclusters.yaml` isn't at the repository root:
 
 ```yaml
-- uses: st3v3nmw/lsfr-action@main
+- uses: littleclusters/action@main
   with:
     working-directory: './my-challenge'
 ```

@@ -75,13 +75,13 @@ Organize these in the working directory however makes sense - separate files, su
 Your server will be started with the working directory:
 
 ```console
-$ ./run.sh --port 8001 --working-dir .lsfr/run-20251226-210357
+$ ./run.sh --port 8001 --working-dir .lc/run-20251226-210357
 ```
 
 Your server will be tested with unexpected crashes:
 
 ```console
-$ lsfr test crash-recovery
+$ lc test crash-recovery
 Testing crash-recovery: Data Survives SIGKILL
 
 ✓ Basic WAL Durability
@@ -91,7 +91,7 @@ Testing crash-recovery: Data Survives SIGKILL
 
 PASSED ✓
 
-Run 'lsfr next' to advance to the next stage.
+Run 'lc next' to advance to the next stage.
 ```
 
 The tests will:
